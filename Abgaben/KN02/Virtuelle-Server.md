@@ -26,5 +26,7 @@ CPU: 1 vCPU
 
 Man kann nur mit 1 Key sich einloggen
 
-![img_6.png](img_6.png)
+![img_7.png](img_7.png)
+
+
 
