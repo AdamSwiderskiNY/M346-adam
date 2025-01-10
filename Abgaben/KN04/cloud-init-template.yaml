@@ -1,0 +1,16 @@
+#cloud-config
+users: #users die am start erstellt werden
+  - name: ubuntu #Benutzername
+    sudo: ALL=(ALL) NOPASSWD:ALL #sudo regeln für benutzer
+    groups: users, admin #Gruppen zu denen ein user gehören kann
+    home: /home/ubuntu #home verzeichnis
+    shell: /bin/bash #standart shell des benutzers
+    ssh_authorized_keys: #öffentliche ssh-schlüssel für zugriff auf benutzer
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpV+1EuOoz/WUVZPs44/d9riPpea1/ItZy3oFvM0nB2VWrih6woaurREVuP/b7TN6Ras6bOPsCxoI6m6GXoZ0jmq8180PvLeK5I1bpVHU7a4YS0lns4Lr8GauobKNHiAMGgucVdtuxNmPEpw65wVWUjNkOQL6sWA/pBv4DGFY7mL6TyQwLCwQPfVodLvGmXq4j+UM/OyLFOXBD80rLarw7ULE+lVDLuOEQmQ3/rVb9U2yxaS6q1GLBt6PPDibMTomcDsrSuNRUc5H14hLyz12BZlk29Ixpm4eGyALu+rKS1qBU/Na6Ik11h79N9cKOrSPNE53xDq0wbKB0uXs/DzKb aws-key
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WGP1EZykEtv5YGC9nMiPFW3U3DmZNzKFO5nEu6uozEHh4jLZzPNHSrfFTuQ2GnRDSt+XbOtTLdcj26+iPNiFoFha42aCIzYjt6V8Z+SQ9pzF4jPPzxwXfDdkEWylgoNnZ+4MG1lNFqa8aO7F62tX0Yj5khjC0Bs7Mb2cHLx1XZaxJV6qSaulDuBbLYe8QUZXkMc7wmob3PM0kflfolR3LE7LResIHWa4j4FL6r5cQmFlDU2BDPpKMFMGUfRSFiUtaWBNXFOWHQBC2+uKmuMPYP4vJC9sBgqMvPN/X2KyemqdMvdKXnCfrzadHuSSJYEzD64Cve5Zl9yVvY4AqyBD aws-key
+ssh_pwauth: false #passwort über ssh deaktiviert
+disable_root: false #root benutzer kann sich anmelden
+package_update: true #paketeinfos installieren
+packages: #liste der pakete zur installierung
+  - curl
+  - wget
